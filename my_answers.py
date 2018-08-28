@@ -91,7 +91,7 @@ class NeuralNetwork(object):
         error = y - final_outputs
         
         # TODO: Calculate the hidden layer's contribution to the error. Done
-        hidden_error = np.dot(self.weights_hidden_to_output, error) 
+        hidden_error = np.dot(error, self.weights_hidden_to_output.T)
         
         # TODO: Backpropagated error terms - Replace these values with your calculations. Done
         output_error_term = error * 1.0
@@ -140,7 +140,7 @@ class NeuralNetwork(object):
 #########################################################
 # Set your hyperparameters here
 ##########################################################
-iterations = 3000
-learning_rate = 1.1
-hidden_nodes = 15
+iterations = 1500
+learning_rate = 0.95
+hidden_nodes = 12
 output_nodes = 1
